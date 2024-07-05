@@ -1,7 +1,3 @@
----
-Date: 11-06-2024
----
-
 # Arithmetic Operators
 
 Arithmetic operators operation or solution or evaluation happens from LEFT -> RIGHT

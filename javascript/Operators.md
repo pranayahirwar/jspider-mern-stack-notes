@@ -1,12 +1,10 @@
----
-Date: 12-06-2024
----
 # Operators in JavaScript
 
 Q. What is Operators?
 
 A. Operators are special *symbols*, which use to *perform operations* on it's *operands* or variables or values passed to these operators.
 
+> [!info]
 > Operator always return some value after performing operations on it's operands.
 > Unary, Binary, Ternary Operator all return some values.
 > 

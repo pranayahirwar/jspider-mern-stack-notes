@@ -1,7 +1,3 @@
----
-Date: 11-06-2024
----
-
 # Operator Overloading
 
 Q. What is Operator Overloading?

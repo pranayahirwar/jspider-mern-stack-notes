@@ -1,7 +1,3 @@
----
-Date: 12-06-2024
----
-
 # Unary Operator
 
 Operator which only need one operand to complete it's operation is knows as Unary operator.
