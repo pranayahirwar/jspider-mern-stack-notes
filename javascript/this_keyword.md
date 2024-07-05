@@ -2,15 +2,14 @@
 
 The **`this`** keyword refers to the context where a piece of code, such as a function's body, is supposed to run. Most typically, it is used in object methods, where `this` refers to the object that the method is attached to, thus allowing the same method to be reused on different objects.
 
-The value of `this` in JavaScript depends on how a function is invoked (runtime [binding](https://developer.mozilla.org/en-US/docs/Glossary/Binding)), not how it is defined. When a regular function is invoked as a method of an object (`obj.method()`), `this` points to that object. When invoked as a standalone function (not attached to an object: `func()`), `this` typically refers to the [global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (in non-strict mode) or `undefined` (in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)). The [`Function.prototype.bind()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method can create a function whose `this` binding doesn't change, and methods `apply()` and `call()` can also set the `this` value for a particular call.
+The value of `this` in JavaScript depends on how a function is invoked (runtime [binding](https://developer.mozilla.org/en-US/docs/Glossary/Binding)), not how it is defined.
+- When a regular function is invoked as a method of an object (`obj.method()`), `this` points to that object.
+- When invoked as a standalone function (not attached to an object: `func()`), `this` typically refers to the [global object](https://developer.mozilla.org/en-US/docs/Glossary/Global_object) (in non-strict mode) or `undefined` (in [strict mode](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode)).
+- The [`Function.prototype.bind()`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Function/bind) method can create a function whose `this` binding doesn't change, and methods `apply()` and `call()` can also set the `this` value for a particular call.
 
-[Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) differ in their handling of `this`: they inherit `this` from the parent scope at the time they are defined. This behavior makes arrow functions particularly useful for callbacks and preserving context. However, arrow functions do not have their own `this` binding. Therefore, their `this` value cannot be set by `bind()`, `apply()` or `call()` methods, nor does it point to the current object in object methods.
-
-## [Try it](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#try_it)
+[Arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) differ in their handling of `this`: they inherit `this` from the parent scope at the time they are defined (defined -> where arrow function code is written or function definition not where they are called???). This behavior makes arrow functions particularly useful for callbacks and preserving context. **However, arrow functions do not have their own `this` binding. Therefore, their `this` value cannot be set by `bind()`, `apply()` or `call()` methods, nor does it point to the current object in object methods.**
 
 ## [Syntax](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this#syntax)
-
-JSCopy to Clipboard
 
 ```js
 this
@@ -30,8 +29,6 @@ Inside a function, the value of `this` depends on how the function is called. 
 
 For a regular function (not an arrow function, bound function, etc.), the value of `this` is the object that the function is accessed on. In other words, if the function call is in the form `obj.f()`, then `this` refers to `obj`. For example:
 
-JSCopy to Clipboard
-
 ```js
 function getThis() {
   return this;
@@ -49,9 +46,9 @@ console.log(obj2.getThis()); // { name: 'obj2', getThis: [Function: getThis] }
 
 Note how the function is the same, but based on how it's invoked, the value of `this` is different. This is analogous to how function parameters work.
 
-The value of `this` is not the object that has the function as an own property, but the object that is used to call the function. You can prove this by calling a method of an object up in the [prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
+> [!TIP]
+> The value of `this` *is not the object that has the function as an own property, but the object that is used to call the function.* You can prove this by calling a method of an object up in the [prototype chain](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain).
 
-JSCopy to Clipboard
 
 ```js
 const obj3 = {
@@ -63,8 +60,6 @@ console.log(obj3.getThis()); // { name: 'obj3' }
 ```
 
 The value of `this` always changes based on how a function is called, even when the function was defined on an object at creation:
-
-JSCopy to Clipboard
 
 ```js
 const obj4 = {
@@ -80,9 +75,7 @@ obj5.getThis = obj4.getThis;
 console.log(obj5.getThis()); // { name: 'obj5', getThis: [Function: getThis] }
 ```
 
-If the value that the method is accessed on is a primitive, `this` will be a primitive value as well — but only if the function is in strict mode.
-
-JSCopy to Clipboard
+If the value that the method is accessed on is a primitive, `this` will be a primitive value as well — but only if the function is in strict mode???.
 
 ```js
 function getThisStrict() {
@@ -95,9 +88,7 @@ Number.prototype.getThisStrict = getThisStrict;
 console.log(typeof (1).getThisStrict()); // "number"
 ```
 
-If the function is called without being accessed on anything, `this` will be `undefined` — but only if the function is in strict mode.
-
-JSCopy to Clipboard
+If the function is called without being accessed on any Object, `this` will be `undefined` — but only if the function is in strict mode.
 
 ```js
 console.log(typeof getThisStrict()); // "undefined"
@@ -106,9 +97,7 @@ console.log(typeof getThisStrict()); // "undefined"
 In non-strict mode, a special process called [`this` substitution](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Strict_mode#no_this_substitution) ensures that the value of `this` is always an object. This means:
 
 - If a function is called with `this` set to `undefined` or `null`, `this` gets substituted with [`globalThis`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/globalThis).
-- If the function is called with `this` set to a primitive value, `this` gets substituted with the primitive value's wrapper object.
-
-JSCopy to Clipboard
+- If the function is called with `this` set to a primitive value, `this` gets substituted with the primitive value's wrapper object???.
 
 ```js
 function getThis() {
