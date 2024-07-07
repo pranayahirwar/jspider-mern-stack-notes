@@ -34,7 +34,6 @@
 	2. [Coding Question In Class](220624-POD.md)
 11. Date: Monday, 24th June 2024 - 13:42 PM
 	1. [Functions](240624-TOD1.md)
-	2. [Coding Question In Class](240624-POD.md)
 12. Date: Tuesday, 25th June 2024 - 13:46 PM
 	1. [Functions](240624-TOD1.md)
 13. Date: Wednesday, 26th June 2024 - 13:43 PM
@@ -42,7 +41,6 @@
 	2. [JS Runtime Environment](260624-TOD2.md)
 14. Date: Thursday, 27th June 2024 - 14:00 PM
 	1. [JS Runtime Environment Explained](260624-TOD2.md)
-	2. [Tasks for Tomorrow](270624-TOT.md)
 15. Date: Friday, 28th June 2024 - 13:56 PM
 	1. [JS Runtime Environment Explained](260624-TOD2.md)
 	2. [What is Object, and how it's created](280624-TOD1.md)

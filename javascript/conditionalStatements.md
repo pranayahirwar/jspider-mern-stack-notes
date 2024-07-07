@@ -2,9 +2,10 @@
 
 Q. What are conditional statements?
 
-A. Conditional Statements are used to control the flow of program, what you mean by flow of program, it means, skipping a block of code in program based on some or given conditions in conditional statement.
+A. Conditional Statements are used to control the flow of program, what you mean by flow of program, it means, skipping a block of code in program based on given conditions in conditional statement.
 
 Ex. Controlling flow of program based on two inputs of function below
+
 ```javascript
 function aIsBiggerOrBIsBigger(a, b) {
 	if (a < b) {
@@ -30,7 +31,8 @@ A. There are 4 types of conditional statements
 4. switch
 
 ---
-### if (some_condition)
+
+## If (some_condition)
 
 Before talking about conditional statement, we need to first know, which values are **true** and **false** for JavaScript Compiler.
 
@@ -50,6 +52,7 @@ Every other values other than **Falsy** in JavaScript is **Truthy**, then that m
 | [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all) | Object    | The only falsy object in JavaScript is the built-in [`document.all`](https://developer.mozilla.org/en-US/docs/Web/API/Document/all).                                                                                                                                                                              |
 
 Code representation of Falsy values in JS.
+
 ```javascript
 if (false) {
   // Not reachable
@@ -79,10 +82,11 @@ if (NaN) {
   // Not reachable
 }
 
-if ("") {
+if ("" || `` || '') {
+  // All 3 above expression result in falsy value, hence
   // Not reachable
 }
 
 ```
 
-`if (some_condition) { ... // code block}`  if (`some_condition`) is truthy according to JS Compiler then only code block written inside `{}` block will be executed.
+`if (some_condition) { ... // code block }` if (`some_condition`) is truthy according to JS Compiler then only code block written inside `{}` block will be executed.

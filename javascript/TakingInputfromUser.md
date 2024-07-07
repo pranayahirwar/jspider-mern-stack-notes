@@ -1,6 +1,7 @@
 Q. How to take input from user in JS?
 
 A. Use `prompt()` function which is not part of JavaScript it's a part of ***Web-API*** to take input from user in browser in Javascript.
+
 ```javascript
 prompt()
 prompt(message)
@@ -22,7 +23,7 @@ A string containing the text entered by the user, or `null`.
 
 Q. How to change datatype from string to number, why because return value of above `prompt()` function is either STRING or NULL?
 
-A. Using Number(enterORGiveVarValueToBeConvertedToNumber)
+A. Using Number(VarNameORValueToBeConvertedToNumber)
 
 ```javascript
 // We get NaN when JS compiler can't convert any given datatype to valid Number

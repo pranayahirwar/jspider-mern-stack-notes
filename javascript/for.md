@@ -12,17 +12,18 @@ for (; i <= 3; i++) {
 > [!TIP]
 > `;` used in for loop to create separation between `initialization` and `condition`
 
-- for loop statement example without `condition;` part, if we try this example our `for` loop will become infinite usually, until we can use `break` keyword to exit out of the loop
+- for loop statement example without `condition;` part, if we try this example our `for` loop will become infinite, until we use `break` keyword to exit out of the loop
+
 ```js
 for (let i = 1; ; i++) {
   console.log(i);
 }
 ```
 
-- for loop statement example without `afterthought;` part
+- for loop statement example without `afterthought;`
 
 ```js
-// This is a valid for where we have missed afterthought value
+// This is a valid for loop where we have missed afterthought value
 for (let i = 1; i <= 3;) {
   console.log(i);
   i += 1;
@@ -229,7 +230,7 @@ for (
 // Logs 0, 0, 0
 ```
 
-This logs "0, 0, 0", because the `i` variable in each loop evaluation is actually a separate variable, but `getI` and `incrementI` both read and write the _initial_ binding of `i`, not what was subsequently declared.
+This logs "0, 0, 0", because the `i` variable in each loop evaluation is actually a separate variable, but `getI` and `incrementI` both read and write the *initial* binding of `i`, not what was subsequently declared.
 
 ## Using for without a Body
 
@@ -277,4 +278,3 @@ for (let l = 0, r = arr.length - 1; l < r; l++, r--) {
 // 2 5
 // 3 4
 ```
-

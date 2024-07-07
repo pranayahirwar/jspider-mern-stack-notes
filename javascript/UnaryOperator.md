@@ -1,22 +1,22 @@
 # Unary Operator
 
-Operator which only need one operand to complete it's operation is knows as Unary operator.
+Operator which only need one operand to start it's operation is knows as Unary operator.
 
-> Unary operator also return something.
+> Unary operator also return some value after evaluation.
 
-There are 4 types of Unary Operator in JS
-1. Pre-Increment  (++var)  updated value of var value is returned
-2. Post-Increment (var++)  value before update will be returned
-3. Pre-Decrement  (--var)  updated value of var value is returned
-4. Post-Decrement (var--)  value before update will be returned
+1. Pre-Increment (++var) updated value of var value is returned
+2. Post-Increment (var++) value before update will be returned
+3. Pre-Decrement (--var) updated value of var value is returned
+4. Post-Decrement (var--) value before update will be returned
 
 ---
 
-### Exercise of Unary Operator
+## Exercise of Unary Operator
 
 Tell the values of B variable in below codes using all types of above Unary operator
 
 - Pre-Increment (++var)
+
 ```javascript
 let a = 10;
 let b;
@@ -26,6 +26,7 @@ console.log(`a=${a}, b=${b}`)
 ```
 
 - Post-Increment (var++)
+
 ```javascript
 let a = 10;
 let b;
@@ -35,6 +36,7 @@ console.log(`a=${a}, b=${b}`)
 ```
 
 - Pre-Decrement (--var)
+
 ```javascript
 let a = 10;
 let b;
@@ -44,6 +46,7 @@ console.log(`a=${a}, b=${b}`)
 ```
 
 - Post-Decrement (var--)
+
 ```javascript
 let a = 10;
 let b;
@@ -53,29 +56,34 @@ console.log(`a=${a}, b=${b}`)
 ```
 
 ---
-### My Extra Notes
 
-Complete list Unary Operators in JS
+## Extra Notes
+
+Almost Complete list Unary Operators in JS
 
 1. **Unary plus (`+`)**: Tries to convert the operand into a number. Returns a number. Usually takes a string and return Number
+
 ```javascript
 let str = "123";
 console.log(typeof +str); // "number"
 ```
 
 2. **Unary negation (`-`)**: Tries to convert the operand into a number and negates after. Returns a number.
+
 ```javascript
 let str = "123";
 console.log(typeof -str); // "number"
 ```
 
 3. **Logical Not (`!`)**: Converts the operand to Boolean type and negates it. Returns a Boolean.
+
 ```javascript
 let truthy = 1;
 console.log(typeof !truthy); // "boolean"
 ```
 
 4. **Bitwise Not (`~`)**: Inverts the bits of the operand. Returns a number.
+
 ```javascript
 let num = 5;              // binary: 101
 console.log(~num);        // -6 
@@ -90,6 +98,7 @@ Here's how the bitwise NOT (`~`) operator works on the number 5 step by step:
 Therefore, `~5` in JavaScript gives `-6`.
 
 5. **Typeof (`typeof`)**: *Returns a string* indicating the type of the unevaluated operand. Returns a string.
+
 ```javascript
 let num = 123;
 console.log(typeof num); // "number"
@@ -97,11 +106,13 @@ console.log(typeof typeof num); // "string"
 ```
 
 6. **Void (`void`)**: Discards any return value from an expression. Returns `undefined`.
+
 ```javascript
 console.log(typeof void(1)); // "undefined"
 ```
 
-7. **Delete (`delete`)**: Deletes an object, an object's property, or an element at a specified index in an array. *Returns a Boolean* indicating whether the operation was successful.
+7. **Delete (`delete`)**: Deletes an **object's property, not object**, or an element at a specified index in an array. *Returns a Boolean* indicating whether the operation was successful.
+
 ```javascript
 let obj = {key1: 'value1', key2: 'value2'};
 

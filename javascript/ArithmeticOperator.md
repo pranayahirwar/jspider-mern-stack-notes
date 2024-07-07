@@ -1,16 +1,17 @@
 # Arithmetic Operators
 
 Arithmetic operators operation or solution or evaluation happens from LEFT -> RIGHT
-1. `+` 
+1. `+`
 2. `-`
-5. `*` 
-3. `/` 
+5. `*`
+3. `/`
 4. `%`
 
 `Math.trunc()` method to remove decimal value.
 
 ---
-**How to remove last one, two, ... digits from a number?**
+**How to remove last one, two or three ... digits from a number?**
+
 ```javascript
 let n=1234;
 
@@ -28,8 +29,8 @@ console.log(Math.trunc(n / 1000))
 
 ```
 
-
 **How to get last one, two, ... digits from a number?**
+
 ```javascript
 let n=1234;
 
@@ -48,5 +49,6 @@ console.log(Math.trunc(n % 1000))
 ```
 
 ---
-To write addition in short we can write `a += 1` do you think this is correct `a=+1` || `a =+ 1`?
-Ans: Yes we can write, it seems wrong but, try to see this `a = -1` || `a=-1`
+To write addition in short we can write `a += 1` do you think this is correct `a=+1` or `a =+ 1`?
+
+Ans: Yes we can write, it seems wrong but, try to see this `a = -1` || `a=-1`, similarly we are representing +ve value of 1 above.

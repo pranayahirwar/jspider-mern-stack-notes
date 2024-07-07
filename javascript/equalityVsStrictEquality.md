@@ -1,28 +1,25 @@
 # Equality (`==`) & Strict Equality (`===`)
 
-### Equality (`==`) 
+## Equality (`==`)
 
-- In `==` type coercion (implicit conversion of datatype happens) 
+- In `==` type coercion implicit conversion of datatype happens, if datatype of two operand are not of same datatype.
 
 Q. Write step by step process how `==` work if datatype of x and y are equal and not equal
 
-A. 
+A.
 
 if datatype of ()
 
+## Strict (`===`)
 
-### Strict (`===`)
-
-- It will check values and datatype
-- In `===` type coercion (implicit conversion of datatype happens)  will not happen
-
+- In `===` type coercion implicit conversion of datatype happens will not happen if datatype of two operand are different and JS will return `false`.
 ---
 
 ```javascript
 // What will be output
 console.log(1 > 2 > 3) // Output: false
 
-// 1. first 1 > 2 operation will happen it will return false, and this false will be inputted to next operator with operand 3
+// 1. first 1 > 2 operation will evaluate it will return false, and this false will be inputted to next operator with operand 3
 // 2. now false > 3 operation will happen, one is Boolean datatype and other is number, so Type Coercion will happen false will be converted to Number Datatype which is 0, so 0 > 3 is false. Hence false is returned in output
 
 let a=5;
@@ -56,6 +53,3 @@ let b=6;
 console.log(a++ > 5 || b++ > 5); // true
 console.log(a, b) // 6 7
 ```
-
-
-

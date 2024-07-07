@@ -1,10 +1,10 @@
-# Type Conversion Vs Type Coercion & Typecasting
+# Type Conversion (Typecasting) Vs Type Coercion &
 
-**Type Conversion**: Explicit conversion of one datatype to another datatype comes under 
+**Type Conversion**: Explicit conversion of one datatype to another datatype by programmer.
 
-**Type Coercion**: Implicit conversion of one datatype to another datatype comes under 
+**Type Coercion**: Implicit conversion of one datatype to another datatype by JS.
 
-### Typecasting
+## Typecasting
 
 Q. How to convert String to Number in JS?
 
@@ -40,7 +40,7 @@ let num = parseInt(str); // NaN
 // In this case, tries to start parsing the string from the left, but it immediately encounters a character ('a') that can't be converted into a number. As a result, it returns `NaN`.
 ```
 
-4. **parseFloat function**: This is useful when you want to convert a string to a floating-point number. It ignores any non-numeric characters after the first number in the string. If the string can't be converted, it returns `NaN`.
+4. **parseFloat function**: This is useful when you want to convert a string to a floating-point number. It ignores any non-numeric characters after the first number in the string. If the string can't be converted or first char of string is non-numeric then, it returns `NaN`.
 
 ```javascript
 let str = "123.45";
