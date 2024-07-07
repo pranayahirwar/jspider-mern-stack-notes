@@ -1,4 +1,8 @@
+# Code
+
 ```js
+// RUNNING IN NON-STRICT MODE
+
 // Create an employee object
 let topLevelVar1 = "I am a top level variable 1";
 let topLevelVar2 = "I am a top level variable 2";
@@ -84,6 +88,9 @@ employee.methodOfObjectCase3();
 employee.methodOfObjectCase4();
 employee.methodOfObjectCase5();
 employee.methodOfObjectCase6();
+
+let topLevelVar3 = "I am a top level variable 3";
+let topLevelVar4 = "I am a top level variable 4";
 ```
 
 Note: Before understanding, how `this` keyword is working inside function which are written inside employee object. We first have to know how, `this` keyword behave in different different functions (arrow, expression and declaration) and in different scenario (when
@@ -94,7 +101,8 @@ Note: words wrapped in `this` (backticks) mean, it's a keyword of javascript.
 Take a look at below 2 tables.
 
 `this` keyword behavior when they are used inside function
-TABLE 01:
+
+## TABLE 01
 
 | Function Type        | NON-STRICT MODE                                         | STRICT MORE                                             |
 | -------------------- | ------------------------------------------------------- | ------------------------------------------------------- |
@@ -103,32 +111,29 @@ TABLE 01:
 | Arrow Function       | refers to current lexical environment, parent reference | refers to current lexical environment, parent reference |
 
 `this` keyword behavior when they are used inside function and this functions is method of object.
-TABLE 02:
 
-| Function Type                           | NON-STRICT MODE                                             | STRICT MORE                                               |
-| --------------------------------------- | ----------------------------------------------------------- | --------------------------------------------------------- |
-| Function Declaration (Not possible)     | refers to objected which called the method                  | refers to objected which called the method                |
-| Function Expression                     | refers to objected which called the method                  | refers to objected which called the method                |
-| Arrow Function                          | Refers to current lexicalenvironment parent's reference     | Refers to current lexical environment parent reference    |
+## TABLE 02
+
+| Function Type                       | NON-STRICT MODE                                         | STRICT MORE                                            |
+| ----------------------------------- | ------------------------------------------------------- | ------------------------------------------------------ |
+| Function Declaration (Not possible) | refers to objected which called the method              | refers to objected which called the method             |
+| Function Expression                 | refers to objected which called the method              | refers to objected which called the method             |
+| Arrow Function                      | Refers to current lexicalenvironment parent's reference | Refers to current lexical environment parent reference |
 
 Steps to find `this` keyword value inside function which are written inside object and also if object contain more function inside it,
 
-**Remember Function created inside object are known as methods and this methods special for `this` keyword.**
+**Remember Function created inside object are known as methods and this methods (or function) is special for `this` keyword.**
 
-- Check which type of function is written inside object. (Function Expression or Arrow Function)
-	 - Function Expression (REFER TABLE 02):
-	    - If it's a Function Expression, then `this` keyword refers to object which called the method.
-	    
-		- WHAT IF ANOTHER `innerFunction()` defined inside Function Expression?
-		    - Remember `innerFunction()` not special function like method, it's a normal function. Then ask which type of function it is Arrow or Expression?
-			    - If function expression (REFER TABLE 01): then function expression is going to point window object. All function expression or declaration point to window object by default no matter where it's defined.
-			    - if Arrow function (REFER TABLE 01): then check where this arrow function is called, who is the parent of `innerFunction()`? it is `methodOfObjectCase3()` so what is the value of `this` keyword for `methodOfObjectCase3` it's employee object, so `innerFunction()` will take it's parent value and point to employee object.
-
-	 - Arrow Function (REFER TABLE 02)
-	    - If it's a Arrow Function, then check where this function is called, and then think what is the value of `this` keyword not for arrow function, but value of parent where this arrow function is called.
-		    - Eg. employee.methodOfObjectCase2() we are calling this function in top level code, this mean `this` keyword point's to window object by default.
-
-			- WHAT IF ANOTHER `innerFunction()` defined inside Arrow Function?
-		    - Remember it's not special function like method, it's a normal function. Then ask which type of function it is Arrow or Expression?
-			    - **If function expression**: then function expression is going to point window object by default. All function expression or declaration point to window object by default no matter where it's defined.
-         - **if Arrow function**: then check where this (eg. `methodOfObjectCase6()`) arrow function is called, who is the parent of `innerFunction()`? it is `methodOfObjectCase6()` so what is the value of `this` keyword for `methodOfObjectCase6` it's window object, so `innerFunction()` will take it's parent value and point to window object.
+1. Check which type of function is written inside object. (Function Expression or Arrow Function)
+	1. Function Expression (REFER TABLE 02):
+		1. If it's a Function Expression, then `this` keyword refers to object which called the method.
+		2. WHAT IF ANOTHER `innerFunction()` defined inside Function Expression?
+			1. Remember `innerFunction()` not special function like method, it's a normal function. Then ask which type of function it is Arrow or Expression?
+			2. If function expression (REFER TABLE 01): then function expression is going to point window object. All function expression or declaration point to window object by default no matter where it's defined.
+			3. if Arrow function (REFER TABLE 01): then check where this arrow function is called, who is the parent of `innerFunction()`? it is `methodOfObjectCase3()` so what is the value of `this` keyword for `methodOfObjectCase3` it's employee object, so `innerFunction()` will take it's parent value and point to employee object.
+	2. Arrow Function (REFER TABLE 01 or 02)
+		1. If it's a Arrow Function, then check where this function is called, and then think what is the value of `this` keyword not for arrow function, but value of parent where this arrow function is called. Eg. `employee.methodOfObjectCase2()` we are calling this function in top level code, this mean `this` keyword point's to window object by default.
+		2. WHAT IF ANOTHER `innerFunction()` defined inside Arrow Function?
+			1. Remember it's not special function like method, it's a normal function. Then ask which type of function it is Arrow or Expression?
+			2. **If function expression**: then function expression is going to point window object by default. All function expression or declaration point to window object by default no matter where it's defined.
+			3. **if Arrow function**: then check where this (eg. `methodOfObjectCase6()`) arrow function is called, who is the parent of `innerFunction()`? it is `methodOfObjectCase6()` so what is the value of `this` keyword for `methodOfObjectCase6` it's window object, so `innerFunction()` will take it's parent value and point to window object.
