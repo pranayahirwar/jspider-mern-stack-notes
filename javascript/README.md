@@ -28,7 +28,7 @@
 	2. [Coding Question In Class](200624-POD.md)
 9. Date: Friday, 21st June 2024 - 13:44 PM
 	1. [Coding Question In Class](210624-POD.md)
-	2. [Tasks for Tomorrow](210624-TOT.md)
+	2. [Tasks for Tomorrow](210624-TOT.md)m
 10. Date: Saturday, 22nd June 2024 - 09:34 AM
 	1. [Switch Statement](220624-TOD1.md)
 	2. [Coding Question In Class](220624-POD.md)
@@ -60,3 +60,8 @@
 	1. [Is overloading in JS is possible?](050724-TOD1.md)
 	2. [call, apply, bind method of Function](050724-TOD2.md)
 	3. [Hoisting](050724-TOD3.md)
+5. Date: Monday, 8th July 2024 - 16:49 PM
+	1. [Pure Function](080724-TOD1.md)
+	2. [Default Parameter In Function](240624-TOD1.md)
+	3. [Recursive Function](080724-TOD2.md)
+	4. [Task for Tomorrow](080724-TOT.md)
