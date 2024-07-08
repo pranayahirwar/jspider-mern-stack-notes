@@ -2,7 +2,7 @@
 
 ## Table of Content
 
-- [JavaScript Notes](javascript/README.md.md)
+- [JavaScript Notes](javascript/README.md)
 
 ---
 
