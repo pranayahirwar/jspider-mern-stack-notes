@@ -65,3 +65,9 @@
 	2. [Default Parameter In Function](240624-TOD1.md)
 	3. [Recursive Function](080724-TOD2.md)
 	4. [Task for Tomorrow](080724-TOT.md)
+6. Date: Tuesday, 9-10th July 2024 - 17:09 PM
+	1. [Bootstrap](090724-TOD1)
+7. Date: Thursday, 11th July 2024 - 16:55 PM
+	1. [DOM](110724-TOD1.md)
+8. Date: Friday, 12th July 2024 - 16:52 PM
+	1. [Events in DOM and How to Handle them](120724-TOD.md)
